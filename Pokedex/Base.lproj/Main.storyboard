@@ -41,6 +41,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DDt-de-gWl">
                                 <rect key="frame" x="16" y="129" width="343" height="518"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GGF-g4-HDH">
                                     <size key="itemSize" width="105" height="105"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -106,6 +107,9 @@
                             <constraint firstItem="Juj-SL-gKh" firstAttribute="top" secondItem="hRZ-hg-fCI" secondAttribute="bottom" id="xtF-82-mZu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pokeCollectionView" destination="DDt-de-gWl" id="d3x-Iv-Aeu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
