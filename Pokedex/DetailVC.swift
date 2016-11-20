@@ -29,6 +29,14 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        receivedPokemon.downloadPokemonDetails { 
+            //With typealias closure, this will be exceuted when download is completed
+            self.updateUI()
+        }
+    }
+    
+    func updateUI(){
+        
     }
 
     override func didReceiveMemoryWarning() {
