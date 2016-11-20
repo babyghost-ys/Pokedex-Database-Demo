@@ -110,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				AA41B8041DE1FC53003F9E06 /* pokemon.csv */,
-				AA41B8131DE20C71003F9E06 /* music.mp3 */,
 				AA41B8141DE20C71003F9E06 /* music.png */,
+				AA41B8131DE20C71003F9E06 /* music.mp3 */,
 				AA41B8111DE20B2D003F9E06 /* pokemon.ttf */,
 			);
 			name = Resources;

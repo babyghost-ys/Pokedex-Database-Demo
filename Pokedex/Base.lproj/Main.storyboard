@@ -141,6 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="pokeCollectionView" destination="DDt-de-gWl" id="d3x-Iv-Aeu"/>
+                        <outlet property="searchPokemon" destination="Juj-SL-gKh" id="boq-0o-CYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
