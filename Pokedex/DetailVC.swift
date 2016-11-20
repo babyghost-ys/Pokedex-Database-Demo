@@ -36,6 +36,10 @@ class DetailVC: UIViewController {
     }
     
     func updateUI(){
+        heightLabel.text = receivedPokemon.height
+        weightLabel.text = receivedPokemon.weight
+        attackLabel.text = receivedPokemon.attack
+        defenseLabel.text = receivedPokemon.defense
         
     }
 
