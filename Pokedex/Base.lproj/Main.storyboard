@@ -171,6 +171,9 @@
                                             <constraint firstAttribute="width" constant="42" id="PKN-pn-ebH"/>
                                         </constraints>
                                         <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="38P-oj-1ZJ" eventType="touchUpInside" id="zVu-by-MI5"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv5-9U-Mfn">
                                         <rect key="frame" x="34.5" y="27" width="251" height="20.5"/>
@@ -434,6 +437,20 @@
                             <constraint firstItem="dj1-rG-ywg" firstAttribute="top" secondItem="jZv-fd-7Zo" secondAttribute="bottom" constant="8" id="zT7-wS-cMv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="attackLabel" destination="l9c-26-TZa" id="i0A-UR-kna"/>
+                        <outlet property="currentEvo" destination="MzP-dN-I5l" id="Xau-2d-qto"/>
+                        <outlet property="defenseLabel" destination="HB0-Ud-RyN" id="9As-KX-Ce5"/>
+                        <outlet property="evoLabel" destination="oPo-p2-MzR" id="bYp-ud-vFc"/>
+                        <outlet property="heightLabel" destination="3gw-DE-n2t" id="fD9-EL-4ii"/>
+                        <outlet property="idLabel" destination="AJW-Sq-RUU" id="adZ-s5-qMh"/>
+                        <outlet property="nextEvo" destination="7lZ-fj-7qi" id="cF1-uB-4X6"/>
+                        <outlet property="pokeDesc" destination="miY-Gr-IJW" id="Bpg-Mw-aPm"/>
+                        <outlet property="pokeImage" destination="Q1G-Iw-6ue" id="89R-9g-Oen"/>
+                        <outlet property="pokeName" destination="Qv5-9U-Mfn" id="PZ0-RN-bHl"/>
+                        <outlet property="typeLabel" destination="C1K-0Q-DaI" id="i4c-T2-5h9"/>
+                        <outlet property="weightLabel" destination="cdn-oF-r9u" id="W9f-66-Wn6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csj-Gs-lSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
