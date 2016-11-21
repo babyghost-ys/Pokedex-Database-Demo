@@ -28,6 +28,11 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let img = UIImage(named: "\(receivedPokemon.pokeID)")
+        pokeImage.image = img
+        currentEvo.image = img
+        
+        idLabel.text = "\(receivedPokemon.pokeID)"
         // Do any additional setup after loading the view.
         receivedPokemon.downloadPokemonDetails { 
             //With typealias closure, this will be exceuted when download is completed
@@ -40,6 +45,7 @@ class DetailVC: UIViewController {
         weightLabel.text = receivedPokemon.weight
         attackLabel.text = receivedPokemon.attack
         defenseLabel.text = receivedPokemon.defense
+        typeLabel.text = receivedPokemon.type
         
     }
 
