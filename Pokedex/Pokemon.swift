@@ -19,7 +19,34 @@ class Pokemon {
     private var _weight: String!
     private var _attack: String!
     private var _nextEvoTxt: String!
+    private var _nextEvoName: String!
+    private var _nextEvoID: String!
+    private var _nextEvoLevel: String!
     private var _pokemonURL: String!
+    
+    var nextEvoLevel: String{
+        if _nextEvoLevel == nil {
+            _nextEvoLevel = ""
+        }
+        
+        return _nextEvoLevel
+    }
+    
+    
+    var nextEvoID: String {
+        if _nextEvoID == nil {
+            _nextEvoID = ""
+        }
+        
+        return _nextEvoID
+    }
+    
+    var nextEvoName: String {
+        if _nextEvoName == nil{
+            _nextEvoName = ""
+        }
+        return _nextEvoName
+    }
     
     var description: String {
         if _description == nil {
@@ -121,6 +148,44 @@ class Pokemon {
                     }
                 } else {
                     self._type = ""
+                }
+                
+                if let descrArray = dict["descriptions"] as? [Dictionary<String, String>], descrArray.count > 0 {
+                    if let url = descrArray[0]["resource_uri"]{
+                        let desurl = "\(URL_BASE)\(url)"
+                        Alamofire.request(desurl).responseJSON(completionHandler: { (response) in
+                            if let desDict = response.result.value as? Dictionary<String, AnyObject> {
+                                if let descr = desDict["description"] as? String {
+                                    let finaldes = descr.replacingOccurrences(of: "POKMON", with: "Pokemon")
+                                    self._description = finaldes
+                                }
+                            }
+                            completed()
+                        })
+                    }
+                } else {
+                    self._description = ""
+                }
+                
+                if let evoArray = dict["evolutions"] as? [Dictionary<String, AnyObject>], evoArray.count > 0 {
+                    if let nextEvo = evoArray[0]["to"] as? String {
+                        if nextEvo.range(of: "mega") == nil { //Disable Mega Pokemon Only
+                            self._nextEvoName = nextEvo
+                            
+                            if let uri = evoArray[0]["resource_uri"] as? String {
+                                let newStr = uri.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                                let evoID = newStr.replacingOccurrences(of: "/", with: "")
+                                self._nextEvoID = evoID
+                                
+                                if let lvlExist = evoArray[0]["level"] {
+                                    self._nextEvoLevel = "\(lvlExist)"
+                                } else {
+                                    self._nextEvoLevel = ""
+                                }
+                            }
+                        }
+                        
+                    }
                 }
                 
             }

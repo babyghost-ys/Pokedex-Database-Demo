@@ -46,7 +46,18 @@ class DetailVC: UIViewController {
         attackLabel.text = receivedPokemon.attack
         defenseLabel.text = receivedPokemon.defense
         typeLabel.text = receivedPokemon.type
+        pokeDesc.text = receivedPokemon.description
         
+        if receivedPokemon.nextEvoID == "" {
+            evoLabel.text = "No Evolutions"
+            nextEvo.isHidden = true
+        } else {
+            nextEvo.isHidden = false
+            nextEvo.image = UIImage(named: receivedPokemon.nextEvoID)
+            
+            let str = "Next Evolution \(receivedPokemon.nextEvoName) - Level \(receivedPokemon.nextEvoLevel)"
+            evoLabel.text = str
+        }
     }
 
     override func didReceiveMemoryWarning() {
